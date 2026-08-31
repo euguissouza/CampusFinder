@@ -1,11 +1,12 @@
 package com.api.campusfinder.DTO;
 
-import com.api.campusfinder.Enum.Campus;
+import com.api.campusfinder.Entity.CampusEntity;
+
 
 public class AlunoDTO {
     private String aluno;
     private String rgm;
-    private Campus campus;
+    private CampusEntity campus;
 
     public String getAluno() {
         return aluno;
@@ -19,10 +20,10 @@ public class AlunoDTO {
     public void setRgm(String rgm) {
         this.rgm = rgm;
     }
-    public Campus getCampus() {
+    public CampusEntity getCampus() {
         return campus;
     }
-    public void setCampus(Campus campus) {
+    public void setCampus(CampusEntity campus) {
         this.campus = campus;
     }
 }
