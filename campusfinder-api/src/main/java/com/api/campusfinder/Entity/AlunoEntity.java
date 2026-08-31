@@ -1,10 +1,13 @@
 package com.api.campusfinder.Entity;
 
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +19,8 @@ public class AlunoEntity {
     private int id;
     private String aluno;
     private String rgm;
+
+    @OneToOne
     private CampusEntity campus;
 
     public int getId() {
