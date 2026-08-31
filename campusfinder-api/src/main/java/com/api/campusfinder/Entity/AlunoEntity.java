@@ -1,6 +1,5 @@
 package com.api.campusfinder.Entity;
 
-import com.api.campusfinder.Enum.Campus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +16,7 @@ public class AlunoEntity {
     private int id;
     private String aluno;
     private String rgm;
-    private Campus campus;
+    private CampusEntity campus;
 
     public int getId() {
         return id;
@@ -37,10 +36,10 @@ public class AlunoEntity {
     public void setRgm(String rgm) {
         this.rgm = rgm;
     }
-    public Campus getCampus() {
+    public CampusEntity getCampus() {
         return campus;
     }
-    public void setCampus(Campus campus) {
+    public void setCampus(CampusEntity campus) {
         this.campus = campus;
     }
 
