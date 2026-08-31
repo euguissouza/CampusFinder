@@ -7,18 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.campusfinder.DTO.AlunoDTO;
-import com.api.campusfinder.Repository.AlunoRepository;
 import com.api.campusfinder.Service.AlunoService;
 
 @RestController
-@RequestMapping("/campus-finder")
+@RequestMapping("/campus-finder/alunos")
 public class AlunoController {
 
-    private AlunoRepository repository;
+
     private AlunoService service;
 
-    public AlunoController(AlunoRepository repository, AlunoService service) {
-        this.repository = repository;
+    public AlunoController(AlunoService service) {
         this.service = service;
     }
 
