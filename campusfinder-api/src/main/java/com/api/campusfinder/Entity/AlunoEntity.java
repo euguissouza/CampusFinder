@@ -1,12 +1,14 @@
 package com.api.campusfinder.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,7 +21,9 @@ public class AlunoEntity {
     private String aluno;
     private String rgm;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "campus_id")
+    @JsonBackReference 
     private CampusEntity campus;
 
     public int getId() {

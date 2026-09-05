@@ -16,9 +16,9 @@ public class AlunoService {
     }
 
     public void cadastraAluno(AlunoDTO dto){
+
         AlunoEntity aluno = new AlunoEntity();
         aluno.setAluno(dto.getAluno());
-        aluno.setCampus(dto.getCampus());
         aluno.setRgm(dto.getRgm());
         repository.save(aluno);
     }

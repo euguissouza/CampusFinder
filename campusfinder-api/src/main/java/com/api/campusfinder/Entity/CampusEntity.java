@@ -1,11 +1,15 @@
 package com.api.campusfinder.Entity;
 
 import jakarta.persistence.Id;
-import jakarta.persistence.CascadeType;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -18,9 +22,9 @@ public class CampusEntity {
     private Long id;
     private String campusNome;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "aluno_id")
-    private AlunoEntity aluno;
+    @OneToMany(mappedBy = "campus",fetch = FetchType.EAGER)
+    @JsonManagedReference 
+    private List<AlunoEntity> aluno;
 
     public Long getId() {
         return id;
@@ -38,11 +42,11 @@ public class CampusEntity {
         this.campusNome = campusNome;
     }
 
-    public AlunoEntity getAluno() {
+    public List<AlunoEntity> getAluno() {
         return aluno;
     }
 
-    public void setAluno(AlunoEntity aluno) {
+    public void setAluno(List<AlunoEntity> aluno) {
         this.aluno = aluno;
     }
 
@@ -50,6 +54,8 @@ public class CampusEntity {
     public String toString() {
         return "CampusEntity [id=" + id + ", campusNome=" + campusNome + ", aluno=" + aluno + "]";
     }
+
+
 
 
 }
